@@ -18,7 +18,7 @@ bibliography: about.bib
 ---
 
 
-<img alt="introduction" src="/urgent2024/assets/img/intro.png" style="max-width: 100%;"/>
+<img alt="introduction" src="/GSDSchallenge2026/assets/img/대회주제_소개이미지.jpg" style="max-width: 100%;"/>
 
 <!-- <p>We can also cite <d-cite key="VoiceFixer-Liu2022"></d-cite> external publications.</p>
 
@@ -35,65 +35,48 @@ if isinstance(speech_mix, np.ndarray):
     speech_mix = torch.as_tensor(speech_mix)
 </d-code> -->
 
-## URGENT 2024 Challenge
+# 텍스트로 읽는 씬의 재구성
+## Overview
+서울대학교 데이터사이언스 대학원에서는 최신 인공지능 연구의 최전선에서 기존 모델의 한계를 극복하고 다양한 상황에서의 일반화 성능 향상을 위해 활발히 연구를 진행하고 있습니다. 뿐만 아니라, 이러한 연구 성과가 좀 더 확산되고, 보다 많은 사람들이 인공지능 연구에 관심을 가질 수 있도록 하는 데에도 많은 노력을 기울이고 있습니다. 이러한 노력의 일환으로 저희 대학원에서 자체적으로 수집한 데이터를 공개하여 국내외 대학 학부생들이 최신 인공지능 모델을 직접 개발해보고 성능을 겨루어 볼 수 있는 경연의 장을 마련하였습니다.
 
-URGENT 2024 (Universality, Robustness, and Generalizability for EnhancemeNT) is a speech enhancement challenge accepted by the [**NeurIPS 2024 Competition Track**](https://neurips.cc/Conferences/2024/CompetitionTrack). We aim to build universal speech enhancement models for unifying speech processing in a wide variety of conditions.
+## Description
+**1. 과제 정의: 텍스트로 읽는 씬의 재구성**
+주어진 스토리라인(캡션)에 맞게 4개의 이미지 프레임을 올바른 순서로 재배열하는 문제.
 
-## Goal
+**2. 문제 배경 및 중요성**
+이 과제는 이미지와 캡션을 개별적으로 인식하는 수준을 넘어, 여러 장면(frames)을 스토리 라인 (캡션)의 맥락 속에서 재구성하여 올바른 시간적 전개 순서를 복원하는 멀티모달 이해 능력을 평가함.
 
-Based on the increasing interest in the generalizability of speech enhancement models, we propose the URGENT Challenge that aims to: 
+**3. 입력(Input) 및 출력(Output) 형식:** 
 
-1. Bring more attention to constructing universal speech enhancement models with strong generalizability.
-2. Push forward the progress of speech enhancement research towards more realistic scenarios with a comprehensive evaluation.
-3. Provide insightful and systematic comparison between SOTA discriminative and generative methods in a wide range of conditions, including different distortions and input formats (sampling frequencies and number of microphones).
-4. Provide a benchmark for this direction so that researchers can easily compare different methods.
-5. Allow conclusiveness of method comparisons by providing a set of training data that is exclusive and mandatory for all models.
+- 입력: { "text": "자연어 문장", "frames": [image_3, image_1, image_4, image_2] } 형식의 데이터
+- 출력: [1, 3, 0, 2] 와 같이 원본 프레임의 인덱스를 올바른 시간 순서로 나열한 배열
 
+**4. 대회 진행 절차** 본 경진대회는 예선과 본선으로 나누어 진행됩니다. 
 
-## Task Introduction
+ a. 예선기간동안 참가자들은 제공된 학습 데이터를 바탕으로 모델을 개발하고, 모델의 추론 결과를 제출하여 순위를 결정하게 됩니다. 예선기간중 리더보드는 **전체 테스트 데이터의 70%** (Public data)만 이용하여 업데이트됩니다.
 
-The task of this challenge is to build **a single speech enhancement system** to adaptively handle input speech with different distortions (corresponding to different SE subtasks) and different input formats (e.g., sampling frequencies) in different acoustic environments (e.g., noise and reverberation).
+ b. 예선이 종료되면, 테스트 데이터 전체 (Public + Private data)를 활용하여 예선 순위가 결정됩니다. 코드 검증을 통과한 상위 10명 내외를 본선에 진출하게 합니다. 
 
-The training data will consist of several public corpora of speech, noise, and RIRs. Only the specified set of data can be used during the challenge. We encourage participants to apply data augmentation techniques such as dynamic mixing to achieve the best generalizability. The data preparation scripts are released in our GitHub repository<d-footnote><a href="https://github.com/urgent-challenge/urgent2024_challenge/" target="_blank">https://github.com/urgent-challenge/urgent2024_challenge/</a></d-footnote>. Check the [`Data`](/urgent2024/data) tab for more information.
+ c. 본선은 오프라인 발표평가로 이루어집니다. 예선기간중에 모델개발했던 과정을 정리하여 심사위원분들께 발표하고, 예선시 달성한 모델의 성능 점수와 발표점수를 합산하여 최종 우승자를 결정합니다. 점수배정은 다음과 같습니다.
 
-We also provide baselines in the [ESPnet](https://github.com/espnet/espnet) toolkit to facilitate the system development. Check the [`Baseline`](/urgent2024/baseline) tab for more information.
+| **항목** | **설명** | **점수** |
+| --- | --- | --- |
+| 모델 성능 점수 | 예선 Test set에 대한 성능 점수 | 40 |
+| 데이터 활용 | 데이터 전처리 | 15 |
+| 모델 설계 및 학습 방법론 | 문제 특성에 맞춘 모델 구조 선택 및 학습 방법론 적용 | 15 |
+| 최적화 방법론 | 추론 환경 제약에 맞춘 모델 성능 최적화 | 10 |
+| 자원 효율성 | 태스크 수행 시 필요한 피크 메모리와 응답 속도(지연 시간)에 대한 평가 | 10 |
+| 구축 비용 | 시스템 구축 시 요구되는 연산량 (학습) 및 데이터 전처리 비용 (외부 api 사용 등) | 10 |
+| 총합 |  | 100 |
 
-We will evaluate enhanced audios with a variety of metrics to comprehensively understand the capacity of existing generative and discriminative methods. They include four different categories of metrics<d-footnote>An additional category (subjective SE metrics) will be added for the final blind test phase for evaluating the MOS score.</d-footnote>:
+**5. 대회 규칙** Rules 탭을 참고하여 주시기 바랍니다. 규칙을 준수하지 않는 경우 실격처리될 수 있습니다.
 
-1. non-intrusive metrics (e.g., DNSMOS, NISQA) for reference-free speech quality evaluation.
-2. intrusive metrics (e.g., PESQ, STOI, SDR, MCD) for objective speech quality evaluation.
-3. downstream-task-independent metrics (e.g., Levenshtein phone similarity) for language-independent, speaker-independent, and task-independent evaluation.
-4. downstream-task-dependent metrics (e.g., speaker similarity, word accuracy or WAcc) for evaluation of compatibility with different downstream tasks.
+**6. 참가 자격** 국내외 대학 학부 재학생 또는 휴학생 ※ 전공 및 학년 제한 없음 
 
-More details about the evaluation plan can be found in the [`Rules`](/urgent2024/rules) tab.
+※ 단, 상금은 **국내 은행 계좌로만 입금** 가능하며, 참가 자격 관련 추가 문의는 담당자에게 문의 바랍니다.
 
-## Communication
+[주최/운영] 서울대학교 데이터사이언스 대학원
 
-[Join our Slack workspace](https://join.slack.com/t/urgentchallenge/shared_invite/zt-2jy2stg7q-79AGeAY0CpKHRl7r4X0e6g) for real-time communication.
+## Evaluation
 
-## Workshop
-
-Top-ranking teams will be invited to a dedicated workshop in the NeurIPS 2024 conference (December 14 or December 15, 2024). More information will be provided after the challenge is completed.
-
-<!-- ## Paper Submission
-
-Participants may feel free to submit their system description paper to any conference. -->
-
-## Motivation
-
-Recent decades have witnessed rapid development of deep learning-based speech enhancement (SE) techniques, with impressive performance in matched conditions. However, most conventional speech enhancement approaches focus only on a limited range of conditions, such as single-channel, multi-channel, anechoic, and so on.
-In many existing works, researchers tend to only train SE models on one or two common datasets, such as the VoiceBank+DEMAND<d-footnote><a href="https://datashare.ed.ac.uk/handle/10283/2791">https://datashare.ed.ac.uk/handle/10283/2791</a></d-footnote> and Deep Noise Suppression (DNS) Challenge datasets.
-
-The evaluation is often done only on simulated conditions that are similar to the training setting. Meanwhile, in earlier SE challenges such DNS series, the choice of training data was also often left to the participants. This led to the situation that models trained with a huge amount of private data were compared to models trained with a small public dataset. This greatly impedes understanding of the generalizability and robustness of SE methods comprehensively. In addition, the model design may be biased towards a specific limited condition if only a small amount of data is used. The resultant SE model may also have limited capacity to handle more complicated scenarios.
-
-Apart from conventional discriminative methods, generative methods have also attracted much attention in recent years. They are good at handling different distortions with a single model<d-cite key="UNIVERSE-Serra2022,VoiceFixer-Liu2022"/> and tend to generalize better than discriminative methods<d-cite key="Conditional-Lu2022"/>. However, their capability and universality have not yet been fully understood through a comprehensive benchmark.
-
-Meanwhile, recent efforts<d-cite key="Toward-Zhang2023,Improving-Zhang2024"/> have shown the possibility of building a single system to handle various input formats, such as different sampling frequencies and numbers of microphones.
-However, a well-established benchmark covering a wide range of conditions is still missing, and no systematic comparison has been made between state-of-the-art (SOTA) discriminative and generative methods regarding their generalizability.
-
-Existing speech enhancement challenges have fostered the development of speech enhancement models for specific conditions, such as denoising and dereverberation<d-cite key="DNS1-Reddy2020,DNS2-Reddy2021,DNS3-Reddy2021,DNS4-Dubey2022,DNS5-Dubey2024"/>, speech restoration<d-cite key="SIG1-Cutler2024,SIG2-Ristea2024"/>, packet loss concealment<d-cite key="PLC1-Diener2022,PLC2-Diener2024"/>, acoustic echo cancellation<d-cite key="AEC1-Sridhar2021,AEC2-Cutler2021,AEC3-Cutler2022,AEC4-Cutler2024"/>, hearing aids<d-cite key="Clarity1-Graetzer2021,Clarity2-Akeroyd2023,Clarity2-Cox2023"/>, 3D speech enhancement<d-cite key="L3DAS21-Guizzo2021,L3DAS22-Guizzo2022,L3DAS23-Marinoni2023,L3DAS23-Gramaccioni2024"/>, far-field multi-channel speech enhancement for video conferencing<d-cite key="ConferencingSpeech-Rao2021"/>, unsupervised domain adaptation for denoising<d-cite key="CHiME7-Leglaive2023"/>, and audio-visual speech enhancement<d-cite key="AVSE-Blanco2023"/>. These challenges have greatly enriched the corpora in speech enhancement studies. However, there still lacks a challenge that can benchmark the generalizability of speech enhancement systems in a wide range of conditions.
-
-Similar issues can also be observed in other speech tasks such as automatic speech recognition (ASR), speech translation (ST), speaker verification (SV), and spoken language understanding (SLU).
-Among them, speech enhancement is particularly vulnerable to mismatches since it is heavily reliant on paired clean/noisy speech data to achieve strong performance. Unsupervised speech enhancement that does not require groundtruth clean speech has been proposed to address this issue, but often merely brings benefit in a final finetuning stage<d-cite key="Employing-Xu2024"/>. Therefore, we focus on speech enhancement in this challenge to address the aforementioned problems.
-
-<!-- Be sure to list "URGENT Challenge: Universality, Robustness, and Generalizability for EnhancemeNT" as your paper subject area when making a submission. -->
+예선 순위는 Exact Match Accuracy (제출한 순서와 정답 순서가 완전히 일치하는 경우만 정답으로 인정)를 기준으로 결정됩니다. 즉, 각 문제에 대해 올바르게 재배열한 이미지의 순서가 [0,3,1,2]일 경우 [0,3,1,2]를 정확히 맞춘 경우만 정답으로 처리되며 다른 순서는 정답으로 인정되지 않습니다.

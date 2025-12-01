@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+<script src="/GSDSchallenge2026/assets/js/distillpub/template.v2.js"></script>
 <html lang="en">
 
   <!-- Head -->
@@ -9,9 +11,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Workshop on  Diffusion Models</title>
-    <meta name="author" content="Workshop on  Diffusion Models" />
-    <meta name="description" content="" />
+    <title>GSDS  Challenge (2026)</title>
+    <meta name="author" content="GSDS  Challenge (2026)" />
+    <meta name="description" content="Seoul National University Graduate School of Data Science is hosting an AI challenge on speech enhancement." />
+    <meta name="keywords" content="speech enhancement" />
 
 
     <!-- Bootstrap & MDB -->
@@ -28,10 +31,10 @@
 
     <!-- Styles -->
     
-    <link rel="shortcut icon" href="/assets/img//assets/img/cell"/>
+    <link rel="shortcut icon" href="/GSDSchallenge2026/assets/img/logo.jpg"/>
     
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="stylesheet" href="/GSDSchallenge2026/assets/css/main.css">
+    <link rel="canonical" href="https://gsdschallenge.github.io/GSDSchallenge2026/">
     
     <!-- Dark Mode -->
     
@@ -42,14 +45,86 @@
   <body class="fixed-top-nav sticky-bottom-footer">
 
     <!-- Header -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(function() {
+        const latestCode = '20241218';
+        const cookiesEnabled = navigator.cookieEnabled;
+      
+        // Function to get cookie value
+        function getCookie(name) {
+          let cookieArr = document.cookie.split(";");
+          for (let i = 0; i < cookieArr.length; i++) {
+            let cookiePair = cookieArr[i].split("=");
+            if (name == cookiePair[0].trim()) {
+                return decodeURIComponent(cookiePair[1]);
+            }
+          }
+          return null;
+        }
+      
+        // Function to set cookie
+        function setCookie(name, value, days) {
+          if (cookiesEnabled) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+          }
+        }
+      
+        // Initialize notifications from cookies
+        if (cookiesEnabled) {
+          $(".nav-item .notification").each(function() {
+            let that = this;
+            if (getCookie(`${this.id}`) != latestCode) {
+              this.classList.add("show");
+              $("#notif-navbar-toggler")[0].classList.add("show");
+            } else {
+              this.classList.remove("show");
+              if ($(".nav-item .notification.show").length === 0) {
+                $("#notif-navbar-toggler")[0].classList.remove("show");
+              }
+            }
+
+            $(this.parentElement.getElementsByTagName("a")[0]).on("click", function() {
+              setCookie(`${that.id}`, latestCode, 3650);
+              that.classList.remove("show");
+              if ($(".nav-item .notification.show").length === 0) {
+                $("#notif-navbar-toggler")[0].classList.remove("show");
+              }
+            });
+          });
+       }
+      });
+    </script>
+
     <header>
 
       <!-- Nav Bar -->
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
         <div class="container">
-          
+          <li class="nav-item dropdown" style="list-style-type: none;">
+            <a class="navbar-brand title font-weight-lighter dropdown-toggle" href="#" id="yearDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GSDS <span class="font-weight-bold">Challenge (2026)</span></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="yearDropdown">
+              
+                
+                  <a class="dropdown-item font-weight-bold" href="https://urgent-challenge.github.io/urgent2026/" target="_blank" rel="noopener noreferrer">2026 (current)</a>
+                
+              
+                
+                  <a class="dropdown-item" href="https://urgent-challenge.github.io/urgent2025/" target="_blank" rel="noopener noreferrer">2025</a>
+                
+              
+            </div>
+          </li>
           <!-- Navbar Toggle -->
-          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler collapsed ml-auto position-relative" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="notification" id="notif-navbar-toggler"></span>
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar top-bar"></span>
             <span class="icon-bar middle-bar"></span>
@@ -61,16 +136,44 @@
 
               <!-- About -->
               <li class="nav-item active">
-                <a class="nav-link" href="/">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/GSDSchallenge2026/">About<span class="sr-only">(current)</span></a>
               </li>
               
 
               <!-- Other pages -->
-              <li class="nav-item ">
-                <a class="nav-link" href="/schedule/">Schedule</a>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/timeline/">Timeline</a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="/submissions/">Call for Papers</a>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/data/">Data</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/rules/">Rules</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/baseline/">Baseline</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/submission/">Submission</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/leaderboard/">Leaderboard</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/faq/">FAQ</a>
+              </li>
+              <li class="nav-item position-relative ">
+<a class="nav-link" href="/GSDSchallenge2026/papers/">Papers</a>
+              </li>
+              <li class="nav-item position-relative ">
+<span class="notification" id="notif-tab-Notice"></span><a class="nav-link" href="/GSDSchallenge2026/notice/">Notice</a>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/GSDSchallenge2026/organizers/">Organizers</a>
+                  <a class="dropdown-item" href="/GSDSchallenge2026/contact/">Contact</a>
+                </div>
               </li>
             </ul>
           </div>
@@ -82,778 +185,120 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <!-- about.html -->
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      Workshop on 
-      <span class="font-weight-bold">Diffusion Models</span>
-    </h1>
-    <p class="desc"><b>Workshop at the Conference on Neural Information Processing Systems (NeurIPS) 2023</b></p>
-  </header>
-
-  <article>
-
-    Over the past three years, diffusion models have established themselves as a new generative modelling paradigm.
-    Their empirical successes have broadened the applications of generative modelling to image, video, audio, 3D
-    synthesis and science applications. As diffusion models become more and more popular and are applied to extremely
-    diverse problems, it also becomes harder to track the key contributions in the field. This workshop aims to keep
-    track of the recent advances and set guidelines for future research. By bringing together practice, methodology and
-    theory actors we aim at identifying unexplored areas and pushing the frontier of diffusion model research.
-
-    <br>
-    <br>
-    We are currently accepting submissions! Check out our <a href="https://diffusionworkshop.github.io/submissions/" target="_blank" rel="noopener noreferrer">Call for Papers</a> for more details.
-    <br>
-    <br>
+      <p><img alt="introduction" src="/GSDSchallenge2026/assets/img/%EB%8C%80%ED%9A%8C%EC%A3%BC%EC%A0%9C_%EC%86%8C%EA%B0%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg" style="max-width: 100%;"></p>
+
+<!-- <p>We can also cite <d-cite key="VoiceFixer-Liu2022"></d-cite> external publications.</p>
+
+<d-math block>
+  \mathbb{E}_{z \sim q_\phi(z|x)}
+</d-math>
+
+Hi <d-footnote>This is a footnote.</d-footnote> how are you?
+
+<d-code block language="python">
+import torch
+
+if isinstance(speech_mix, np.ndarray):
+    speech_mix = torch.as_tensor(speech_mix)
+</d-code> -->
+
+<h1 id="텍스트로-읽는-씬의-재구성">텍스트로 읽는 씬의 재구성</h1>
+<h2 id="overview">Overview</h2>
+<p>서울대학교 데이터사이언스 대학원에서는 최신 인공지능 연구의 최전선에서 기존 모델의 한계를 극복하고 다양한 상황에서의 일반화 성능 향상을 위해 활발히 연구를 진행하고 있습니다. 뿐만 아니라, 이러한 연구 성과가 좀 더 확산되고, 보다 많은 사람들이 인공지능 연구에 관심을 가질 수 있도록 하는 데에도 많은 노력을 기울이고 있습니다. 이러한 노력의 일환으로 저희 대학원에서 자체적으로 수집한 데이터를 공개하여 국내외 대학 학부생들이 최신 인공지능 모델을 직접 개발해보고 성능을 겨루어 볼 수 있는 경연의 장을 마련하였습니다.</p>
+
+<h2 id="description">Description</h2>
+<p><strong>1. 과제 정의: 텍스트로 읽는 씬의 재구성</strong>
+주어진 스토리라인(캡션)에 맞게 4개의 이미지 프레임을 올바른 순서로 재배열하는 문제.</p>
+
+<p><strong>2. 문제 배경 및 중요성</strong>
+이 과제는 이미지와 캡션을 개별적으로 인식하는 수준을 넘어, 여러 장면(frames)을 스토리 라인 (캡션)의 맥락 속에서 재구성하여 올바른 시간적 전개 순서를 복원하는 멀티모달 이해 능력을 평가함.</p>
+
+<p><strong>3. 입력(Input) 및 출력(Output) 형식:</strong> </p>
+
+<ul>
+  <li>입력: { “text”: “자연어 문장”, “frames”: [image_3, image_1, image_4, image_2] } 형식의 데이터</li>
+  <li>출력: [1, 3, 0, 2] 와 같이 원본 프레임의 인덱스를 올바른 시간 순서로 나열한 배열</li>
+</ul>
+
+<p><strong>4. 대회 진행 절차</strong> 본 경진대회는 예선과 본선으로 나누어 진행됩니다.</p>
+
+<p>a. 예선기간동안 참가자들은 제공된 학습 데이터를 바탕으로 모델을 개발하고, 모델의 추론 결과를 제출하여 순위를 결정하게 됩니다. 예선기간중 리더보드는 <strong>전체 테스트 데이터의 70%</strong> (Public data)만 이용하여 업데이트됩니다.</p>
+
+<p>b. 예선이 종료되면, 테스트 데이터 전체 (Public + Private data)를 활용하여 예선 순위가 결정됩니다. 코드 검증을 통과한 상위 10명 내외를 본선에 진출하게 합니다.</p>
+
+<p>c. 본선은 오프라인 발표평가로 이루어집니다. 예선기간중에 모델개발했던 과정을 정리하여 심사위원분들께 발표하고, 예선시 달성한 모델의 성능 점수와 발표점수를 합산하여 최종 우승자를 결정합니다. 점수배정은 다음과 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>항목</strong></th>
+      <th><strong>설명</strong></th>
+      <th><strong>점수</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>모델 성능 점수</td>
+      <td>예선 Test set에 대한 성능 점수</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <td>데이터 활용</td>
+      <td>데이터 전처리</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>모델 설계 및 학습 방법론</td>
+      <td>문제 특성에 맞춘 모델 구조 선택 및 학습 방법론 적용</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>최적화 방법론</td>
+      <td>추론 환경 제약에 맞춘 모델 성능 최적화</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>자원 효율성</td>
+      <td>태스크 수행 시 필요한 피크 메모리와 응답 속도(지연 시간)에 대한 평가</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>구축 비용</td>
+      <td>시스템 구축 시 요구되는 연산량 (학습) 및 데이터 전처리 비용 (외부 api 사용 등)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>총합</td>
+      <td> </td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>5. 대회 규칙</strong> Rules 탭을 참고하여 주시기 바랍니다. 규칙을 준수하지 않는 경우 실격처리될 수 있습니다.</p>
+
+<p><strong>6. 참가 자격</strong> 국내외 대학 학부 재학생 또는 휴학생 ※ 전공 및 학년 제한 없음</p>
+
+<p>※ 단, 상금은 <strong>국내 은행 계좌로만 입금</strong> 가능하며, 참가 자격 관련 추가 문의는 담당자에게 문의 바랍니다.</p>
+
+<p>[주최/운영] 서울대학교 데이터사이언스 대학원</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>예선 순위는 Exact Match Accuracy (제출한 순서와 정답 순서가 완전히 일치하는 경우만 정답으로 인정)를 기준으로 결정됩니다. 즉, 각 문제에 대해 올바르게 재배열한 이미지의 순서가 [0,3,1,2]일 경우 [0,3,1,2]를 정확히 맞춘 경우만 정답으로 처리되며 다른 순서는 정답으로 인정되지 않습니다.</p>
 
-    <br>
-    <!-- -->
-    <!-- News -->
-    <!--          
-          <div class="news">
-            <h2>Announcements</h2>
-            <div class="table-responsive" >
-              <table class="table table-sm table-borderless">
-               
-                <tr>
-                  <th scope="row">01 Nov, 2023</th>
-                  <td>
-                    We are accepting submissions! See <a href="submissions">Call for Paper</a> for further information.
- 
-                  </td>
-                </tr> 
-                <tr>
-                  <th scope="row">01 Oct, 2023</th>
-                  <td>
-                    Submit your questions to our panelists <a href="">here</a>!
- 
-                  </td>
-                </tr> 
-              </table>
-            </div> 
-          </div>
- -->
-
-    <!-- <div class="speakers">
-      <h2>Confirmed Speakers</h2>
-      <p class="card-text">
-      </p>
-      <div class="grid">
-
-
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-            <img src="/assets/resized/Brandon-v2-800x800.jpg"
-              srcset="    /assets/resized/Brandon-v2-480x480.jpg 480w,    /assets/resized/Brandon-v2-800x800.jpg 800w,/ assets/img/Brandon-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Brandon Amos</h2>
-              <h6 class="card-text">Meta AI
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/brandondamos" title="Twitter" target="_blank"
-                    rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=d8gdZR4AAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="http://bamos.github.io/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Claire-v2-1400x1400.jpg"
-              srcset="    /assets/resized/Claire-v2-480x480.jpg 480w,    /assets/resized/Claire-v2-800x800.jpg 800w,    /assets/resized/Claire-v2-1400x1400.jpg 1400w,/ assets/img/Claire-v2.jpg 2973w">
-
-            <div class="card-body">
-              <h2 class="card-title">Claire Tomlin</h2>
-              <h6 class="card-text">UC Berkeley
-                <div class="affiliate">
-
-
-                  <a href="https://scholar.google.com/citations?user=-5_ksIkAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://people.eecs.berkeley.edu/~tomlin/" title="Website" target="_blank"
-                    rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/cuturi-v2-480x480.jpg"
-              srcset="    /assets/resized/cuturi-v2-480x480.jpg 480w,/ assets/img/cuturi-v2.jpg 579w">
-
-            <div class="card-body">
-              <h2 class="card-title">Marco Cuturi</h2>
-              <h6 class="card-text">Apple &amp; ENSAE CREST
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/CuturiMarco" title="Twitter" target="_blank" rel="noopener noreferrer"><i
-                      class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=kQEydDMAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://marcocuturi.net/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/rianne-800x800.jpg"
-              srcset="    /assets/resized/rianne-480x480.jpg 480w,    /assets/resized/rianne-800x800.jpg 800w,/ assets/img/rianne.jpg 817w">
-
-            <div class="card-body">
-              <h2 class="card-title">Rianne van den Berg</h2>
-              <h6 class="card-text">Microsoft Research
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/vdbergrianne" title="Twitter" target="_blank"
-                    rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=KARgiboAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://www.microsoft.com/en-us/research/people/rvandenberg/" title="Website" target="_blank"
-                    rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Jiequn-v2-800x800.jpg"
-              srcset="    /assets/resized/Jiequn-v2-480x480.jpg 480w,    /assets/resized/Jiequn-v2-800x800.jpg 800w,/ assets/img/Jiequn-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Jiequn Han</h2>
-              <h6 class="card-text">Flatiron Institute
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/JiequnH" title="Twitter" target="_blank" rel="noopener noreferrer"><i
-                      class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=el5gT4AAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://users.flatironinstitute.org/~jhan/" title="Website" target="_blank"
-                    rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Giorgia-v2-800x800.jpg"
-              srcset="    /assets/resized/Giorgia-v2-480x480.jpg 480w,    /assets/resized/Giorgia-v2-800x800.jpg 800w,/ assets/img/Giorgia-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Giorgia Ramponi</h2>
-              <h6 class="card-text">ETH Zurich
-                <div class="affiliate">
-
-
-                  <a href="https://scholar.google.com/citations?user=xbIAH5gAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://gioramponi.github.io/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
-    <br>
 
-
-
-
-    <div class="speakers">
-      <h2>Confirmed Panelists</h2>
-
-      <div class="grid">
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Daniela-v2-480x480.jpg"
-              srcset="    /assets/resized/Daniela-v2-480x480.jpg 480w,/ assets/img/Daniela-v2.jpg 580w">
-
-            <div class="card-body">
-              <h2 class="card-title">Daniela Rus</h2>
-              <h6 class="card-text">MIT
-                <div class="affiliate">
-
-
-                  <a href="https://scholar.google.com/citations?user=910z20QAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://danielarus.csail.mit.edu/" title="Website" target="_blank"
-                    rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Theodorou-v2-800x800.jpg"
-              srcset="    /assets/resized/Theodorou-v2-480x480.jpg 480w,    /assets/resized/Theodorou-v2-800x800.jpg 800w,/ assets/img/Theodorou-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Evangelos Theodorou</h2>
-              <h6 class="card-text">Georgia Tech &amp; Amazon
-                <div class="affiliate">
-
-
-                  <a href="https://scholar.google.com/citations?user=dG9MV7oAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://sites.gatech.edu/acds/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Jeannette-v2-800x800.jpg"
-              srcset="    /assets/resized/Jeannette-v2-480x480.jpg 480w,    /assets/resized/Jeannette-v2-800x800.jpg 800w,/ assets/img/Jeannette-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Jeannette Bohg</h2>
-              <h6 class="card-text">Stanford
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/leto__jean" title="Twitter" target="_blank" rel="noopener noreferrer"><i
-                      class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=rjnJnEkAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://web.stanford.edu/~bohg/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Arnaud-v2-800x800.jpg"
-              srcset="    /assets/resized/Arnaud-v2-480x480.jpg 480w,    /assets/resized/Arnaud-v2-800x800.jpg 800w,/ assets/img/Arnaud-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Arnaud Doucet</h2>
-              <h6 class="card-text">University of Oxford &amp; DeepMind
-                <div class="affiliate">
-
-                  <a href="https://twitter.com/ArnaudDoucet1" title="Twitter" target="_blank"
-                    rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-
-
-                  <a href="https://scholar.google.com/citations?user=W4SZGV8AAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://www.stats.ox.ac.uk/~doucet/" title="Website" target="_blank"
-                    rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-item">
-          <div class="card hoverable">
-
-
-
-            <img src="/assets/resized/Sarah-v2-800x800.jpg"
-              srcset="    /assets/resized/Sarah-v2-480x480.jpg 480w,    /assets/resized/Sarah-v2-800x800.jpg 800w,/ assets/img/Sarah-v2.jpg 1000w">
-
-            <div class="card-body">
-              <h2 class="card-title">Sarah Dean</h2>
-              <h6 class="card-text">Cornell
-                <div class="affiliate">
-
-
-                  <a href="https://scholar.google.com/citations?user=xhKqjpYAAAAJ" title="GooleScholar" target="_blank"
-                    rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-
-
-                  <a href="https://sdean.website/" title="Website" target="_blank" rel="noopener noreferrer"><i
-                      class="fas fa-address-card"></i></a>
-
-                </div>
-              </h6>
-              <p class="card-text"></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <br> -->
-
-
-
-    <div class="speakers">
-      <h2>Organizers</h2>
-
-      <div class="container">
-        <div class="row row-cols-2">
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/resized/Valentin-480x360.jpg" srcset="    /assets/resized/Valentin-480x360.jpg 480w,/ assets/img/Valentin.jpg 666w">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Valentin De Bortoli
-                    </h4>
-
-                    <h6 class="card-text">ENS Paris
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/ValentinDeBort1" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=dn_F9I4AAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://vdeborto.github.io/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/resized/Charlotte-v2-1400x1050.jpg" srcset="    /assets/resized/Charlotte-v2-480x360.jpg 480w,    /assets/resized/Charlotte-v2-800x600.jpg 800w,    /assets/resized/Charlotte-v2-1400x1050.jpg 1400w,/ assets/img/Charlotte-v2.jpg 4272w">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Charlotte Bunne
-                    </h4>
-
-                    <h6 class="card-text">ETH Zurich
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/_bunnech" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=U80atIAAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://www.bunne.ch/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/img/bahjat-v3.png" srcset="    /assets/img/bahjat-v3.png 480w">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Bahjat Kawar
-                    </h4>
-
-                    <h6 class="card-text">Technion
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/bahjat_kawar" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=36gR46QAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://bahjat-kawar.github.io/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/img/chenlin-v2.png" srcset="/assets/img/chenlin-v2.png 480w">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Chenlin Meng
-                    </h4>
-
-                    <h6 class="card-text">Stanford
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/chenlin_meng" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=nEFU7wIAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://cs.stanford.edu/~chenlin/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/img/song-v2.png" srcset="    /assets/img/song-v2.png ">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Jiaming Song
-                    </h4>
-
-                    <h6 class="card-text">Luma AI
-                    </h6>
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/baaadas" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=6dP660cAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://tsong.me/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/img/james-v2.png" srcset="/assets/img/james-v2.png">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">James Thornton
-                    </h4>
-
-                    <h6 class="card-text">Oxford University
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-                       
-                      <div class="icon" data-toggle="tooltip" title="Twitter">
-                        <a href="https://twitter.com/JamesTThorn" title="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                      </div>
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=oFZHOwgAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://jtt94.github.io/" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-item col">
-            <div class="card">
-              <div class="row g-0">
-                <div class="card-img col-md-6">
-
-
-
-                  <img src="/assets/img/ye-v3.png" srcset="/assets/img/ye-v3.png">
-
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h4 class="card-title">Jong Chul Ye
-                    </h4>
-
-                    <h6 class="card-text">KAIST
-                    </h6>
-
-                    <div class="row ml-1 mr-1 p-0">
-
-
-                       
-                      <div class="google-scholar-icon">
-                        <div class="icon" data-toggle="tooltip" title="Goole Scholar">
-                          <a href="https://scholar.google.com/citations?user=HNMjoNEAAAAJ" title="GooleScholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-                        </div>
-                      </div>
-
-
-                       
-                      <div class="website-icon">
-                        <div class="icon" data-toggle="tooltip" title="Website">
-                          <a href="https://bispl.weebly.com/professor.html" title="Website" target="_blank" rel="noopener noreferrer"><i class="fas fa-address-card"></i></a>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <br>
-
-
-    <br>
-    <h3 class="post-title"><span class="font-weight-bold">Questions</span></h3>
-    Contact us at
-    <a href="mailto:diffusion.workshop.2023@gmail.com" target="_blank">diffusion.workshop.2023@gmail.com</a>.
-
-  </article>
-
-</div>
-    </div>
+    <d-appendix>
+      <d-footnote-list></d-footnote-list>
+      <d-citation-list></d-citation-list>
+    </d-appendix>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2023 Workshop on  Diffusion Models. Last updated: August 04, 2023.
+        © Copyright 2025 GSDS  Challenge (2026). Last updated: December 02, 2025.
       </div>
-    </footer>
-
-    <!-- JavaScripts -->
-    <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    </footer><d-bibliography src="/GSDSchallenge2026/assets/bibliography/about.bib"></d-bibliography><!-- JavaScripts -->
     <!-- Bootsrap & MDB scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
@@ -861,12 +306,12 @@
     <!-- Masonry & imagesLoaded -->
   <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+  <script defer src="/GSDSchallenge2026/assets/js/masonry.js" type="text/javascript"></script>
     
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
-  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
-  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/GSDSchallenge2026/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/GSDSchallenge2026/assets/js/common.js"></script>
 
     <!-- MathJax -->
   <script type="text/javascript">
@@ -877,7 +322,7 @@
     };
   </script>
   <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!-- <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 
     
     
