@@ -9,7 +9,7 @@ nav_order: 10
 
 본 경진대회 준비를 위해 2025년 1년간 서울대 데이터사이언스 대학원생과 교수님들께서 수고해 주셨습니다! 
 
-<img alt="introduction" src="/SNUAIchallenge/assets/img/경진대회준비팀.jpg" style="max-width: 100%;"/>
+<img alt="introduction" src="/SNUAIChallenge/assets/img/경진대회준비팀.jpg" style="max-width: 100%;"/>
 
 
 ### Core Members
