@@ -7,6 +7,7 @@ nav: false
 nav_order: 10
 ---
 
+---
 본 경진대회 준비를 위해 2025년 1년간 서울대 데이터사이언스 대학원생과 교수님들께서 수고해 주셨습니다! 
 
 <img alt="introduction" src="/assets/img/경진대회준비팀.jpg" style="max-width: 100%;"/>
@@ -15,7 +16,7 @@ nav_order: 10
 ### Core Members
 1. 김수민 (박사과정, VIP 연구실)
 2. 곽수지 (박사과정, Ski-ML 연구실)
-3. <a style="color: #2E67D3;" href="https://keondopark.github.io/profile/">박건도</a> (박사과정, AIoT 연구실) 
+3. <a style="color: #2E67D3;" href="https://keondopark.github.io/">박건도</a> (박사과정, AIoT 연구실) 
 4. <a style="color: #2E67D3;" href="https://edw2n.github.io/"> 백은수 </a> (박사과정, AIoT 연구실) 
 5. 송무호 (박사과정, Ski-ML 연구실) 
 6. 안성근 (박사과정, Ski-ML 연구실)
