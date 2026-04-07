@@ -16,7 +16,9 @@ social: false  # includes social icons at the bottom of the page
 
 bibliography: about.bib
 ---
-<!-- <h1 style="text-align: center; font-weight:bold;">텍스트로 읽는 씬의 재구성</h1> -->
+<h2 style="text-align: center; font-weight: 800; color: #111111;">텍스트로 읽는 씬의 재구성</h2>
+<h4 style="text-align: center; font-weight: bold; color: #555555;">미션: 단서를 활용해 4장의 이미지를 재구성하라</h4>
+<h5 style="text-align: center; font-weight: bold; color: #555555;">서울대학교 AI Challenge 2026</h5>
 <img alt="introduction" src="/assets/img/포스터_260204.png" style="max-width: 100%;"/>
 <br>
 <br>
@@ -45,6 +47,15 @@ bibliography: about.bib
 - 출력: 프레임을 시간 순서대로 정렬한 인덱스 배열
   (예: [1, 3, 0, 2])
 
+### **4. 대회 일정** 
+- 사전 참가 신청 시작: 2026년 4월 27일
+- 예선: 2026년 5월 11일 ~ 2026년 6월 30일
+- 본선: 2026년 7월 15일
+
+상세 일정은  [Timeline](/timeline) 탭을 참고하여 주시기 바랍니다. 
+
+
+
 ### **4. 대회 진행 절차** 
 
 본 경진대회는 예선과 본선으로 나누어 진행됩니다. 
@@ -66,7 +77,7 @@ bibliography: about.bib
 </thead>
 <tbody>
 <tr style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
-<td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">모델 성능 점수</td>
+<td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">모델 성능</td>
 <td style="border-left: 0; border-right: 0; padding: 8px;">예선 테스트 데이터에 대한 추론 성능 평가</td>
 <td style="border-left: 0; border-right: 0; padding: 8px; text-align: center;">40</td>
 </tr>
@@ -105,12 +116,18 @@ bibliography: about.bib
 </div>
 <br>
     
+### **5. 시상 및 혜택** 
+<h4 style="font-weight: 600; color: #000000;"> 1등: 서울대학교 총장상 <span style="color: #d4af37;">(1,000만원)</span> </h4>
+
+<h5 style="font-weight: 600; color: #000000;"> 2등: 학장상 <span style="color: #d4af37;">(500만원)</span> </h5>
 
 
-### **5. 대회 규칙** 
+3/4등: 우수상 (300만원) 및 장려상 (200만원))
+
+### **6. 대회 규칙** 
 [Rules](/rules) 탭을 참고하여 주시기 바랍니다. 규칙을 준수하지 않는 경우 실격처리될 수 있습니다.
 
-### **6. 참가 자격** 
+### **7. 참가 자격** 
 
 국내외 대학 학부 재학생 또는 휴학생 
 <br>
@@ -126,4 +143,20 @@ bibliography: about.bib
 
 <br>
 <br>
-[주최/운영] 서울대학교 데이터사이언스 대학원
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; margin-top: 8px;">
+  <div style="text-align: center; font-weight: 700;">주최/운영</div>
+  <div style="grid-column: 2 / 4; text-align: center; font-weight: 700;">후원사</div>
+
+  <div style="text-align: center;">
+    <div style="font-weight: 700; margin-bottom: 8px;">서울대학교 데이터사이언스 대학원</div>
+    <img alt="GSDS 로고" src="/assets/img/GSDS로고.png" style="height: 70px; max-width: 100%;"/>
+  </div>
+  <div style="text-align: center;">
+    <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>
+    <img alt="(주) 모레 로고" src="/assets/img/Moreh_Logo.png" style="height: 50px; max-width: 100%;"/>
+  </div>
+  <div style="text-align: center;">
+    <div style="font-weight: 700; margin-bottom: 8px;">(주) 모티프테크놀로지스</div>
+    <img alt="(주) 모티프테크놀로지스 로고" src="/assets/img/Motif_Logo.png" style="height: 70px; max-width: 100%;"/>
+  </div>
+</div>
