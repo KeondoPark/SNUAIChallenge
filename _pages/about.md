@@ -16,21 +16,21 @@ social: false  # includes social icons at the bottom of the page
 
 bibliography: about.bib
 ---
-<h2 style="text-align: center; font-weight: 800; color: #111111;">텍스트로 읽는 씬의 재구성</h2>
+<h2 style="text-align: center; font-weight: 800; color: #0F0F70;">텍스트로 읽는 씬의 재구성</h2>
 <h4 style="text-align: center; font-weight: bold; color: #555555;">미션: 단서를 활용해 4장의 이미지를 재구성하라</h4>
 <h5 style="text-align: center; font-weight: bold; color: #555555;">서울대학교 AI Challenge 2026</h5>
-<img alt="introduction" src="/assets/img/포스터_260204.png" style="max-width: 100%;"/>
+<img alt="introduction" src="/assets/img/퀴즈예시.png" style="max-width: 100%; border: 2px solid #0F0F70;"/>
 <br>
 <br>
 
-<h2 style="text-align: center; font-weight:bold;">Overview</h2>
+<h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Overview</h2>
 ---
 서울대학교 데이터사이언스 대학원에서는 최신 인공지능 연구의 최전선에서 기존 모델의 한계를 극복하고 다양한 상황에서의 일반화 성능 향상을 위해 활발히 연구를 진행하고 있습니다. 뿐만 아니라, 이러한 연구 성과가 좀 더 확산되고, 보다 많은 사람들이 인공지능 연구에 관심을 가질 수 있도록 하는 데에도 많은 노력을 기울이고 있습니다. 이러한 노력의 일환으로 **저희 대학원에서 자체적으로 가공한 데이터를 공개하여 국내외 대학 학부생들이 최신 인공지능 모델을 직접 개발해보고 성능을 겨루어 볼 수 있는 경연의 장을 마련하였습니다.**
 <br>
 <br>
 
 
-<h2 style="text-align: center; font-weight:bold;">Challenge Description</h2>
+<h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Challenge Description</h2>
 ---
 ### **1. 과제 정의: 텍스트로 읽는 씬의 재구성**
 주어진 스토리라인(캡션)에 맞게 4개의 이미지 프레임을 올바른 순서로 재배열하는 문제를 해결해야 합니다.
@@ -40,7 +40,7 @@ bibliography: about.bib
 ### **2. 문제 배경 및 중요성**
 이 과제는 이미지와 캡션을 개별적으로 인식하는 수준을 넘어, 여러 장면(frames)을 스토리 라인(캡션)의 맥락 속에서 재구성하여 올바른 시간적 전개 순서를 복원하는 멀티모달 이해 능력을 평가합니다.
 
-### **3. 입력(Input) 및 출력(Output) 형식** 
+### **3. 입력 및 출력 형식** 
 입출력 형식에 관한 간단한 설명은 다음과 같습니다. 
 - 입력: 자연어 문장과 여러 장의 프레임으로 구성된 데이터
   (예: { "text": "자연어 문장", "frames": [image_3, image_1, image_4, image_2] })
@@ -137,7 +137,7 @@ bibliography: about.bib
 
 
 <br>
-<h2 style="text-align: center; font-weight:bold;">Evaluation</h2>
+<h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Evaluation</h2>
 ---
 예선 순위는 **Exact Match Accuracy**를 기준으로 결정됩니다.  제출한 이미지 순서가 정답 순서와 완전히 동일한 경우에만 정답으로 인정되며, 순서가 하나라도 다를 경우 오답으로 처리되며 별도의 부분 점수는 부여하지 않습니다. 예를 들어 정답이 [0,3,1,2]일 때, [0,3,1,2]만 정답으로 처리되며 그 외의 모든 순서는 오답으로 간주됩니다.
 
@@ -149,7 +149,7 @@ bibliography: about.bib
 
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교 데이터사이언스 대학원</div>
-    <img alt="GSDS 로고" src="/assets/img/GSDS로고.png" style="height: 70px; max-width: 100%;"/>
+    <img alt="GSDS 로고" src="/assets/img/GSDS로고_2.png" style="height: 70px; max-width: 100%;"/>
   </div>
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">(주) 모레</div>

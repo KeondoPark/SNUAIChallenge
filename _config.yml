@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: SNU AI
+first_name: SNU
 middle_name:
-last_name: Challenge (2026)
+last_name: AI Challenge (2026)
 year: 2026
 all_challenges:
   2026: "/SNUAIChallenge/" #"/GSDSchallenge2026/"
