@@ -26,20 +26,6 @@ nav_order: 10
 10. 정혜민 (박사과정, VIP 연구실)
 11. 최현제 (박사과정, Ski-ML 연구실)
 
-
-<!-- 1. <a style="color: #2E67D3;" href="https://sites.google.com/view/wangyou-zhang">Wangyou Zhang</a>, Shanghai Jiao Tong University, China
-2. <a style="color: #2E67D3;" href="http://www.robinscheibler.org">Robin Scheibler</a>, Google DeepMind, Japan
-3. <a style="color: #2E67D3;" href="https://github.com/popcornell">Samuele Cornell</a>, Carnegie Mellon University, USA
-4. <a style="color: #2E67D3;" href="">Chenda Li</a>, Shanghai Jiao Tong University, China
-5. <a style="color: #2E67D3;" href="https://kohei0209.github.io">Kohei Saijo</a>, Waseda University, Japan
-6. <a style="color: #2E67D3;" href="https://sites.google.com/view/shinjiwatanabe">Shinji Watanabe</a>, Carnegie Mellon University, USA
-7. <a style="color: #2E67D3;" href="https://www.tu-braunschweig.de/en/ifn/institute/team/sv/fingscheidt">Tim Fingscheidt</a>, Technische Universität Braunschweig, Germany
-8. <a style="color: #2E67D3;" href="https://nateanl.github.io">Zhaoheng Ni</a>, Meta, USA
-9. <a style="color: #2E67D3;" href="https://anuragkr90.github.io">Anurag Kumar</a>, Meta, USA
-10. <a style="color: #2E67D3;" href="https://www.tu-braunschweig.de/en/ifn/institute/dept/sv/sach">Marvin Sach</a>, Technische Universität Braunschweig, Germany
-11. <a style="color: #2E67D3;" href="https://scholar.google.com/citations?user=aTUq3f4AAAAJ&hl=en">Wei Wang</a>, Shanghai Jiao Tong University, China
-12. <a style="color: #2E67D3;" href="https://www.tu-braunschweig.de/en/ifn/institute/dept/sv/translate-to-english-yihui-fu-m-eng">Yihui Fu</a>, Technische Universität Braunschweig, Germany -->
-
 ### Advisory members
 1. <a style="color: #2E67D3;" href="https://www.snu-laal.com/">김태섭</a> 교수 (LAAL 연구실)
 2. <a style="color: #2E67D3;" href="https://aiot.snu.ac.kr/">김형신</a> 교수 (AIoT 연구실)

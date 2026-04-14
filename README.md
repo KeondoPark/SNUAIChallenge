@@ -8,7 +8,7 @@ rbenv install 3.1.2
 rbenv global 3.1.2
 gem install jekyll bundler
 bundle install
-bundle exec jekyll serve --host=0.0.0.0:20942 # 로컬 20942 포트로 페이지 띄우기
+bundle exec jekyll serve --port 20942 --host=0.0.0.0 # 로컬 20942 포트로 페이지 띄우기
 ```
 
 수정 완료 후 git push 해주시면 수 분 후에 업데이트 된 내용이 github page에 반영됩니다.
