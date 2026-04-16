@@ -29,6 +29,6 @@ bibliography: data.bib
 
 <img alt="data" src="/assets/img/문제예시3_new.jpg" style="max-width: 100%;"/>
 
-<img alt="data" src="/assets/img/문제예시4_new.jpg" style="max-width: 100%;"/>
+<img alt="data" src="/assets/img/문제예시4_new_넘버링.jpg" style="max-width: 100%;"/>
 
 <img alt="data" src="/assets/img/문제예시5_new.jpg" style="max-width: 100%;"/>

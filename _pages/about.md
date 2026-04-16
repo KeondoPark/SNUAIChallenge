@@ -16,7 +16,7 @@ social: false  # includes social icons at the bottom of the page
 
 bibliography: about.bib
 ---
-<h2 style="text-align: center; font-weight: 800; color: #0F0F70;">텍스트로 읽는 장면의 재구성</h2>
+<h2 style="text-align: center; font-weight: 800; color: #0F0F70;">텍스트로 풀어보는 장면의 재구성</h2>
 <h4 style="text-align: center; font-weight: bold; color: #555555;">미션: 단서를 활용해 4장의 이미지를 재구성하라</h4>
 <h5 style="text-align: center; font-weight: bold; color: #555555;">서울대학교 AI Challenge</h5>
 <img alt="introduction" src="/assets/img/퀴즈예시.png" style="max-width: 100%; border: 2px solid #0F0F70;"/>
@@ -32,10 +32,10 @@ bibliography: about.bib
 
 <h2 style="text-align: center; font-weight:bold; color: #0F0F70;">Challenge Description</h2>
 ---
-### **1. 과제 정의: 텍스트로 읽는 장면의 재구성**
+### **1. 과제 정의: 텍스트로 풀어보는 장면의 재구성**
 주어진 스토리라인 (캡션)에 맞게 4개의 이미지 프레임을 올바른 순서로 재배열하는 문제를 해결해야 합니다.
 
-<img alt="introduction" src="/assets/img/대회_소개이미지_new.jpg" style="max-width: 100%;"/>
+<img alt="introduction" src="/assets/img/대회_소개이미지_new_넘버링.jpg" style="max-width: 100%;"/>
 
 ### **2. 문제 배경 및 중요성**
 이 과제는 이미지와 캡션을 개별적으로 인식하는 수준을 넘어, 여러 장면 (frames)을 스토리 라인 (캡션)의 맥락 속에서 재구성하여 올바른 시간적 전개 순서를 복원하는 멀티모달 이해 능력을 평가합니다.
