@@ -83,9 +83,10 @@ blockquote { background: var(--global-bg-color); border-left: 2px solid var(--gl
 .navbar.navbar-light .navbar-brand { color: var(--global-text-color); }
 
 .navbar.navbar-light .navbar-brand .site-logo {
-    height: 28px;
+    height: 26px;
     width: auto;
-    margin-right: 8px;
+    margin-right: 4px;
+    margin-bottom: 4px;
     vertical-align: middle;
 }
 
