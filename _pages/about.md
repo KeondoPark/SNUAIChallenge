@@ -16,6 +16,7 @@ social: false  # includes social icons at the bottom of the page
 
 bibliography: about.bib
 ---
+<img alt="introduction" src="/assets/img/로고 최종본_컬러-투명 배경.png" style="max-width: 20%; display: block; margin: 0 auto;"/>
 <h2 style="text-align: center; font-weight: 800; color: #0F0F70;">텍스트로 풀어보는 장면의 재구성</h2>
 <h4 style="text-align: center; font-weight: bold; color: #555555;">미션: 단서를 활용해 4장의 이미지를 재구성하라</h4>
 <h5 style="text-align: center; font-weight: bold; color: #555555;">서울대학교 AI Challenge</h5>
@@ -190,10 +191,10 @@ bibliography: about.bib
 
   <div style="text-align: center;">
     <div style="font-weight: 700; margin-bottom: 8px;">서울대학교</div>
-    <img alt="GSDS 로고" src="/assets/img/GSDS로고_2.png" style="height: 70px; max-width: 100%;"/>
+    <img alt="GSDS 로고" src="/assets/img/서울대로고.png" style="height: 70px; max-width: 100%;"/>
   </div>
   <div style="text-align: center;">
-    <div style="font-weight: 700; margin-bottom: 8px;">서울대학교 데이터사이언스 대학원</div>
+    <div style="font-weight: 700; margin-bottom: 8px;">서울대학교<br>데이터사이언스 대학원</div>
     <img alt="GSDS 로고" src="/assets/img/GSDS로고_2.png" style="height: 70px; max-width: 100%;"/>
   </div>  
 </div>
